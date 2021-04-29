@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+{% for competence in competences %}
+<h2>Compétences</h2>
+<ul>
+	<li>
+		<p>{{ competence.technologies}}</p>
+		<p>{{ competence.frameworks}}</p>
+		<p>{{ competence.environnement}}</p>
+	</li>
+</ul>
+{% endfor %}
+
+{% for formation in formations %}
+
+<h2>Formations</h2>
+<ul>
+	<li>
+		<p>{{ formation.ecole}}</p>
+		<p>{{ formation.description}}</p>
+		<p>{{ formation.dateAt ? formation.dateAt|date('Y-m-d') : ''}}</p>
+	</li>
+</ul>
+{% endfor %}
+
+{% for projet in projets %}
+
+<h2>Projets</h2>
+<ul>
+	<li>
+		<p>{{ projet.nom}}</p>
+		<p>{{ projet.type}}</p>
+		<p>{{ projet.description}}</p>
+        <p>{{ projet.techno}}</p>
+	</li>
+</ul>
+{% endfor %}
+
+{% endblock %}

@@ -1,20 +1,120 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Page Administration
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div>
+	<h1>Formation index</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Ecole</th>
+				<th>Description</th>
+				<th>DateAt</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for formation in formations %}
+				<tr>
+					<td>{{ formation.id }}</td>
+					<td>{{ formation.ecole }}</td>
+					<td>{{ formation.description }}</td>
+					<td>{{ formation.dateAt ? formation.dateAt|date('Y-m-d') : '' }}</td>
+					<td>
+						<a href="{{ path('formation_show', {'id': formation.id}) }}">show</a>
+						<a href="{{ path('formation_edit', {'id': formation.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/MAMP - Banderas/Code/Symfony/portfolio/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/MAMP - Banderas/Code/Symfony/portfolio/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
+	<a href="{{ path('formation_new') }}">Create new</a>
+
 </div>
+
+<div>
+	<h1>Competence index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Technologies</th>
+				<th>Frameworks</th>
+				<th>Environnement</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for competence in competences %}
+				<tr>
+					<td>{{ competence.id }}</td>
+					<td>{{ competence.technologies }}</td>
+					<td>{{ competence.frameworks }}</td>
+					<td>{{ competence.environnement }}</td>
+					<td>
+						<a href="{{ path('competence_show', {'id': competence.id}) }}">show</a>
+						<a href="{{ path('competence_edit', {'id': competence.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('competence_new') }}">Create new</a>
+
+</div>
+
+<div>
+	<h1>Projet index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Type</th>
+				<th>Description</th>
+				<th>Techno</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for projet in projets %}
+				<tr>
+					<td>{{ projet.id }}</td>
+					<td>{{ projet.nom }}</td>
+					<td>{{ projet.type }}</td>
+					<td>{{ projet.description }}</td>
+					<td>{{ projet.techno }}</td>
+					<td>
+						<a href="{{ path('projet_show', {'id': projet.id}) }}">show</a>
+						<a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('projet_new') }}">Create new</a>
+</div>
+
 {% endblock %}
+

@@ -16,7 +16,7 @@ class FormationController extends AbstractController
     #[Route('/', name: 'formation_index', methods: ['GET'])]
     public function index(FormationRepository $formationRepository): Response
     {
-        return $this->render('formation/index.html.twig', [
+        return $this->render('admin/index.html.twig', [
             'formations' => $formationRepository->findAll(),
         ]);
     }

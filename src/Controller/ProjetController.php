@@ -16,7 +16,7 @@ class ProjetController extends AbstractController
     #[Route('/', name: 'projet_index', methods: ['GET'])]
     public function index(ProjetRepository $projetRepository): Response
     {
-        return $this->render('projet/index.html.twig', [
+        return $this->render('admin/index.html.twig', [
             'projets' => $projetRepository->findAll(),
         ]);
     }

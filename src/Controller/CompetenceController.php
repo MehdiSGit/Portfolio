@@ -16,7 +16,7 @@ class CompetenceController extends AbstractController
     #[Route('/', name: 'competence_index', methods: ['GET'])]
     public function index(CompetenceRepository $competenceRepository): Response
     {
-        return $this->render('competence/index.html.twig', [
+        return $this->render('admin/index.html.twig', [
             'competences' => $competenceRepository->findAll(),
         ]);
     }

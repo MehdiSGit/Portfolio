@@ -21,4 +21,5 @@ class AdminController extends AbstractController
             'projets' => $projetRepository->findAll(),
         ]);
     }
+    
 }

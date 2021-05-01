@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Formation;
 use App\Form\FormationType;
+use App\Repository\CompetenceRepository;
 use App\Repository\FormationRepository;
+use App\Repository\ProjetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,10 +16,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class FormationController extends AbstractController
 {
     #[Route('/', name: 'formation_index', methods: ['GET'])]
-    public function index(FormationRepository $formationRepository): Response
+    public function index(FormationRepository $formationRepository,CompetenceRepository $competenceRepository, ProjetRepository $projetRepository): Response
     {
         return $this->render('admin/index.html.twig', [
             'formations' => $formationRepository->findAll(),
+            'competences' => $competenceRepository->findAll(),
+            'projets' => $projetRepository->findAll(),
         ]);
     }
 

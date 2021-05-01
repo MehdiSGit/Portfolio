@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Projet;
 use App\Form\ProjetType;
+use App\Repository\CompetenceRepository;
+use App\Repository\FormationRepository;
 use App\Repository\ProjetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,9 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProjetController extends AbstractController
 {
     #[Route('/', name: 'projet_index', methods: ['GET'])]
-    public function index(ProjetRepository $projetRepository): Response
+    public function index(FormationRepository $formationRepository,CompetenceRepository $competenceRepository, ProjetRepository $projetRepository): Response
     {
         return $this->render('admin/index.html.twig', [
+            'formations' => $formationRepository->findAll(),
+            'competences' => $competenceRepository->findAll(),
             'projets' => $projetRepository->findAll(),
         ]);
     }

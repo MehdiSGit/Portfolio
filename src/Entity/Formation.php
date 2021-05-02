@@ -32,6 +32,11 @@ class Formation
      */
     private $dateAt;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $titre;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Formation
     public function setDateAt(?\DateTimeInterface $dateAt): self
     {
         $this->dateAt = $dateAt;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(?string $titre): self
+    {
+        $this->titre = $titre;
 
         return $this;
     }

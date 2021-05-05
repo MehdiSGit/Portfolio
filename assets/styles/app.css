@@ -10043,6 +10043,7 @@ p.lead {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.5rem;
+  margin-top: 2rem;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -10104,12 +10105,16 @@ p.lead {
   border-radius: 100%;
   font-size: 1.5rem;
   margin-right: 1.5rem;
+  color: whitesmoke !important;
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
   background-color: #263547;
+}
+a.social-icon{
+  color:whitesmoke !important;
 }
 
 .dev-icons {

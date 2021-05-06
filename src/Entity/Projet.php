@@ -37,6 +37,11 @@ class Projet
      */
     private $techno;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $github;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Projet
     public function setTechno(?string $techno): self
     {
         $this->techno = $techno;
+
+        return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(?string $github): self
+    {
+        $this->github = $github;
 
         return $this;
     }

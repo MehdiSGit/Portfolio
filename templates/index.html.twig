@@ -75,7 +75,7 @@
                         </div>
                         <div class="flex-shrink-0">
                             <span class="text-primary">&#127760; {{ projet.techno}}</span>
-                            <a class="social-icon" href="https://github.com/MehdiSGit"><i class="fab fa-github"></i></a>
+                            <a class="social-icon" href={{ projet.github}}><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     {% endfor %}
@@ -85,7 +85,8 @@
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
+                    <h2 class="mb-5">Formation</h2>
+                    <img id="school" src="img/logo-couleur-S.png" alt="..." />
                     {% for formation in formations %}
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
@@ -103,7 +104,7 @@
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Technologies</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <div class="subheading mb-3">Langages de programmation et Frameworks</div>
                     <ul class="list-inline dev-icons">
                         <li class="list-inline-item"><i class="fab fa-html5"></i></li>
                         <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
@@ -183,7 +184,7 @@
             <!-- Interests-->
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
+                    <h2 class="mb-5">Intérêts</h2>
                     <p>A part être développeur, je suis un amoureux des animaux avec à la maison un Staffie prénommée Bulma, un chat Carlos et le petit dernier Drogo un python Régius.</p>
                     <p class="mb-0">Cinéphile, mes réalisateurs favoris sont Tarantino, les frères Cohen et Wes Anderson</p>
                     <p class="mb-0">Et pour terminer je suis amateur de sport de salle, musculation et fitness : "un esprit sain dans un corps sain"</p>

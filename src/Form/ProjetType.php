@@ -16,6 +16,7 @@ class ProjetType extends AbstractType
             ->add('type')
             ->add('description')
             ->add('techno')
+            ->add('github')
         ;
     }
 

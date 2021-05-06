@@ -9950,6 +9950,10 @@ img {
     page-break-inside: avoid;
   }
 
+  img#school{
+    margin-bottom: 3rem;
+  }
+
   p,
 h2,
 h3 {
@@ -10115,6 +10119,10 @@ p.lead {
 }
 a.social-icon{
   color:whitesmoke !important;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: 90px;
 }
 
 .dev-icons {

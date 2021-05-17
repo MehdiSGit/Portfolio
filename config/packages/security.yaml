@@ -40,3 +40,4 @@ security:
         - { path: ^/formation, roles: ROLE_ADMIN }
         - { path: ^/projet, roles: ROLE_ADMIN }
         - { path: ^/competence, roles: ROLE_ADMIN }
+        - { path: ^/documents, roles: ROLE_ADMIN }

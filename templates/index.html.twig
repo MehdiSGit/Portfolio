@@ -1,217 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Portfolio Sali Mehdi</title>
-        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        {% block stylesheets %}
-			{{ encore_entry_link_tags('app') }} 
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+		<title>Portfolio Sali Mehdi</title>
+		<link
+		rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+		<!-- Font Awesome icons (free version)-->
+		<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+		<!-- Google fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css"/>
+		<link
+		href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
+		<!-- Core theme CSS (includes Bootstrap)-->
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
 		{% block javascripts %}
-			{{ encore_entry_script_tags('app') }} 
+			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Sali Mehdi</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/Mehdi.JPG" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">à propos de moi</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">projets</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Formation</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Technologies</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Intérêts</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Pour finir</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Sali
-                        <span class="text-primary">Mehdi</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        32 ans · Paris · 06.42.46.54.80 ·
-                        <a href="mailto:name@email.com">mehdisalipro@gmail.com</a>
-                    </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/mehdi-sali-316723159"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/MehdiSGit"><i class="fab fa-github"></i></a>
-                        
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">projets</h2>
-                    {% for projet in projets %}
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">{{ projet.nom}}</h3>
-                            <div class="subheading mb-3">{{ projet.type}}</div>
-                            <p>{{ projet.description}}</p>
-                        </div>
-                        <div class="flex-shrink-0">
-                            <span class="text-primary">&#127760; {{ projet.techno}}</span>
-                            <a class="social-icon" href={{ projet.github}}><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Formation</h2>
-                    <img id="school" src="img/logo-couleur-S.png" alt="..." />
-                    {% for formation in formations %}
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">{{ formation.ecole}}</h3>
-                            <div class="subheading mb-3">{{ formation.titre}}</div>
-                            <div>{{ formation.description}}</div>
-                            <p></p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">{{ formation.dateAt ? formation.dateAt|date('Y-m-d') : ''}}</span></div>
-                    </div>
-                    {% endfor %}
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Technologies</h2>
-                    <div class="subheading mb-3">Langages de programmation et Frameworks</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-symfony"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-php"></i></li>
-                        
-                        <li class="list-inline-item"><i class="fab fa-bootstrap"></i></li>
-                        
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
-                    </ul>
-                                        <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Html&CSS
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            JavaScript
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            PHP 7
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            MySql
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            AJAX
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Bootstrap
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            React
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Symfony
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Npm
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Composer
-                        </li>
-                    </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Responsive Design
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Test & débogage sur plusieurs navigateurs
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Travail collaboratif avec UI/UX designeuses/eurs
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Méthode Agile & Gestion de projet Scrum
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Intérêts</h2>
-                    <p>A part être développeur, je suis un amoureux des animaux avec à la maison un Staffie prénommée Bulma, un chat Carlos et le petit dernier Drogo un python Régius.</p>
-                    <p class="mb-0">Cinéphile, mes réalisateurs favoris sont Tarantino, les frères Cohen et Wes Anderson</p>
-                    <p class="mb-0">Et pour terminer je suis amateur de sport de salle, musculation et fitness : "un esprit sain dans un corps sain"</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">The END</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"></span>
-                            Je suis assez fier de vous présenter ce portfolio. C'est mon tout premier projet personnel. Un projet Symfony, les données de chaque partie proviennent d'une base de données crée par moi même.
-                            Chaque partie à son propre Controlleur, sa propre Entité. La meilleure des expériences c'est la pratique.
-                        </li>
-                        
-                    </ul>
-                </div>
-            </section>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+	</head>
+	<body
+		id="page-top">
+		<!-- Navigation-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">
+				<span class="d-block d-lg-none">Sali Mehdi</span>
+				<span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/Mehdi.JPG" alt="..."/></span>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#about">à propos de moi</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#experience">projets</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#education">Formation</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#skills">Technologies</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#interests">Intérêts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#awards">Pour finir</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Page Content-->
+		<div
+			class="container-fluid p-0">
+			<!-- About-->
+			<section class="resume-section" id="about">
+				<div class="resume-section-content">
+					<h1 class="mb-0">
+						Sali
+						<span class="text-primary">Mehdi</span>
+					</h1>
+					<div class="subheading mb-5">
+						32 ans · Paris · 06.42.46.54.80 ·
+						<a href="mailto:name@email.com">mehdisalipro@gmail.com</a>
+					</div>
+					<div class="subheading mb-5">
+						{% for document in documents %}
+							{% if document.pieceJointe is not null %}
+								{{ document.name }}
+								{% if document.name == 'photo' %}
+									<img src="{{ (vich_uploader_asset (document, 'pieceJointeFile' ) ) }}" alt="{{ document.name }}"/>
+								{% else %}
+									<a download href="{{ (vich_uploader_asset (document, 'pieceJointeFile' ) ) }}" alt="{{ document.name }}">Télécharger</a>
+									{# <embed src="{{ (vich_uploader_asset (document, 'pieceJointeFile' ) ) }}" alt="{{ document.name }}" width="700" height="700" type="application/pdf"/> #}
+								{% endif %}
+							{% endif %}
+						{% endfor %}
+					</div>
+					<p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+					<div class="social-icons">
+						<a class="social-icon" href="https://www.linkedin.com/in/mehdi-sali-316723159">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+						<a class="social-icon" href="https://github.com/MehdiSGit">
+							<i class="fab fa-github"></i>
+						</a>
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html></section><hrclass="m-0"/><!-- Experience--><section class="resume-section" id="experience">
+<div class="resume-section-content">
+	<h2 class="mb-5">projets</h2>
+	{% for projet in projets %}
+		<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+			<div class="flex-grow-1">
+				<h3 class="mb-0">{{ projet.nom}}</h3>
+				<div class="subheading mb-3">{{ projet.type}}</div>
+				<p>{{ projet.description}}</p>
+			</div>
+			<div class="flex-shrink-0">
+				<span class="text-primary">&#127760;
+					{{ projet.techno}}</span>
+				<a class="social-icon" href={{ projet.github}}>
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+			<div class="center_documents"></div>
+		{% endfor %}
+
+	</section>
+	<hr
+	class="m-0"/>
+	<!-- Education-->
+	<section class="resume-section" id="education">
+		<div class="resume-section-content">
+			<h2 class="mb-5">Formation</h2>
+			<img id="school" src="img/logo-couleur-S.png" alt="..."/>
+			{% for formation in formations %}
+				<div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+					<div class="flex-grow-1">
+						<h3 class="mb-0">{{ formation.ecole}}</h3>
+						<div class="subheading mb-3">{{ formation.titre}}</div>
+						<div>{{ formation.description}}</div>
+						<p></p>
+					</div>
+					<div class="flex-shrink-0">
+						<span class="text-primary">{{ formation.dateAt ? formation.dateAt|date('Y-m-d') : ''}}</span>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+		<hr
+		class="m-0"/>
+		<!-- Skills-->
+		<section class="resume-section" id="skills">
+			<div class="resume-section-content">
+				<h2 class="mb-5">Technologies</h2>
+				<div class="subheading mb-3">Langages de programmation et Frameworks</div>
+				<ul class="list-inline dev-icons">
+					<li class="list-inline-item">
+						<i class="fab fa-html5"></i>
+					</li>
+					<li class="list-inline-item">
+						<i class="fab fa-css3-alt"></i>
+					</li>
+					<li class="list-inline-item">
+						<i class="fab fa-js-square"></i>
+					</li>
+					<li class="list-inline-item">
+						<i class="fab fa-symfony"></i>
+					</li>
+					<li class="list-inline-item">
+						<i class="fab fa-react"></i>
+					</li>
+					<li class="list-inline-item">
+						<i class="fab fa-php"></i>
+					</li>
+
+					<li class="list-inline-item">
+						<i class="fab fa-bootstrap"></i>
+					</li>
+
+					<li class="list-inline-item">
+						<i class="fab fa-npm"></i>
+					</li>
+				</ul>
+				<ul class="fa-ul mb-0">
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Html&CSS
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						JavaScript
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						PHP 7
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						MySql
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						AJAX
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Bootstrap
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						React
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Symfony
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Npm
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Composer
+					</li>
+				</ul>
+				<div class="subheading mb-3">Workflow</div>
+				<ul class="fa-ul mb-0">
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Responsive Design
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Test & débogage sur plusieurs navigateurs
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Travail collaboratif avec UI/UX designeuses/eurs
+					</li>
+					<li>
+						<span class="fa-li">
+							<i class="fas fa-check"></i>
+						</span>
+						Méthode Agile & Gestion de projet Scrum
+					</li>
+				</ul>
+			</div>
+		</section>
+		<hr
+		class="m-0"/>
+		<!-- Interests-->
+		<section class="resume-section" id="interests">
+			<div class="resume-section-content">
+				<h2 class="mb-5">Intérêts</h2>
+				<p>A part être développeur, je suis un amoureux des animaux avec à la maison un Staffie prénommée Bulma, un chat Carlos et le petit dernier Drogo un python Régius.</p>
+				<p class="mb-0">Cinéphile, mes réalisateurs favoris sont Tarantino, les frères Cohen et Wes Anderson</p>
+				<p class="mb-0">Et pour terminer je suis amateur de sport de salle, musculation et fitness : "un esprit sain dans un corps sain"</p>
+			</div>
+		</section>
+		<hr
+		class="m-0"/>
+		<!-- Awards-->
+		<section class="resume-section" id="awards">
+			<div class="resume-section-content">
+				<h2 class="mb-5">The END</h2>
+				<ul class="fa-ul mb-0">
+					<li>
+						<span class="fa-li"></span>
+						Je suis assez fier de vous présenter ce portfolio. C'est mon tout premier projet personnel. Un projet Symfony, les données de chaque partie proviennent d'une base de données crée par moi même.
+																			                            Chaque partie à son propre Controlleur, sa propre Entité. La meilleure des expériences c'est la pratique.
+					</li>
+
+				</ul>
+			</div>
+		</section>
+	</div>
+	<!-- Bootstrap core JS-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
+</body></body></html>
+

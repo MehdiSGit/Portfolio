@@ -16,6 +16,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "bootstrap": "^4.6.0"
+        "animejs": "^3.2.1",
+        "bootstrap": "^4.6.0",
+        "moment": "^2.29.1"
     }
 }
